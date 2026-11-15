@@ -1,0 +1,161 @@
+/* Páginas legais — Política de Privacidade, Exclusão de conta, Termos e Contato.
+ *
+ * Estas quatro páginas existem para cumprir exigência da Google Play e da
+ * LGPD: precisam ser legíveis, estáveis e imprimíveis, não "bonitas". Por
+ * isso usam prosa em coluna estreita, sem as animações da home.
+ *
+ * Os tokens de cor vêm do index.css (paper, ink, amber...), então a paleta
+ * é a mesma da home — o que muda aqui é só a tipografia de texto corrido.
+ */
+
+.legal {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.legal-prose {
+  max-width: 72ch;
+  margin: 0 auto;
+  padding: 9.5rem 1.5rem 6rem;
+  font-size: 1.0625rem;
+  line-height: 1.72;
+}
+
+@media (min-width: 768px) {
+  .legal-prose {
+    padding-top: 11rem;
+    font-size: 1.125rem;
+  }
+}
+
+.legal-prose h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+.legal-prose .legal-updated {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-mut);
+  margin: 0 0 2.5rem;
+}
+
+.legal-prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 3rem 0 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--color-ink);
+}
+
+.legal-prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.075rem;
+  font-weight: 700;
+  margin: 1.9rem 0 0.5rem;
+}
+
+.legal-prose p {
+  margin: 0 0 1rem;
+}
+
+.legal-prose .legal-lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-ink2);
+  margin-bottom: 2rem;
+}
+
+.legal-prose ul,
+.legal-prose ol {
+  margin: 0 0 1.15rem;
+  padding-left: 1.35rem;
+}
+
+.legal-prose li {
+  margin-bottom: 0.45rem;
+}
+
+.legal-prose li > ul {
+  margin-top: 0.45rem;
+}
+
+.legal-prose a {
+  color: var(--color-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 150ms;
+}
+
+.legal-prose a:hover {
+  color: var(--color-amber2);
+}
+
+.legal-prose strong {
+  font-weight: 700;
+}
+
+/* Destaque para os avisos que o usuário precisa achar rápido
+   (canal de exclusão, resumo da política, emergência). */
+.legal-prose .legal-callout {
+  border: 2px solid var(--color-ink);
+  border-left-width: 6px;
+  border-left-color: var(--color-amber);
+  background: var(--color-paper2);
+  padding: 1.05rem 1.25rem;
+  margin: 0 0 1.75rem;
+}
+
+.legal-prose .legal-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.legal-prose th,
+.legal-prose td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.legal-prose th {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-mut);
+  border-bottom: 2px solid var(--color-ink);
+}
+
+/* Impressão: quem precisa guardar ou anexar a política em papel
+   não deve imprimir menu, rodapé nem a textura. */
+@media print {
+  .legal-nav,
+  .legal-footer,
+  .legal-noise {
+    display: none !important;
+  }
+  .legal-prose {
+    padding: 0;
+    max-width: none;
+  }
+  .legal-prose a {
+    text-decoration: underline;
+  }
+}
